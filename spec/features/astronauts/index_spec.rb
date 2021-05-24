@@ -39,6 +39,14 @@ RSpec.describe 'astronaut index' do
       expect('Capricorn 4').to appear_before('Gemini 7')
     end
   end
+
+  it 'lists the total time in space for each astronaut' do
+    visit '/astronauts'
+
+    within "div#astro-#{@armstrong.id}" do
+      expect(page).to have_content('Total time in space: 151 days')
+    end
+  end
 end
 
 

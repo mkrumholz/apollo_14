@@ -10,4 +10,8 @@ class Astronaut < ApplicationRecord
   def list_missions
     missions.order(Arel.sql('lower(title)'))
   end
+
+  def total_time_in_space
+    missions.sum(:time_in_space)
+  end
 end

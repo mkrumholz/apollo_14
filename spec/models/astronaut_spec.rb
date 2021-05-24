@@ -34,5 +34,16 @@ describe Astronaut, type: :model do
         expect(armstrong.list_missions).to eq [apollo, capricorn, gemini]
       end
     end
+
+    describe 'total_time_in_space' do
+      it 'returns the astronauts total time in space' do
+        armstrong = Astronaut.create!(name: 'Neil Armstrong', age: 37, job: 'Commander')
+        capricorn = armstrong.missions.create!(title: 'Capricorn 4', time_in_space: 72)
+        apollo = armstrong.missions.create!(title: 'Apollo 13', time_in_space: 48)
+        gemini = armstrong.missions.create!(title: 'Gemini 7', time_in_space: 31)
+
+        expect(armstrong.total_time_in_space).to eq 151
+      end 
+    end
   end
 end
