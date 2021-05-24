@@ -5,6 +5,14 @@
     <h3><%= astronaut.name %></h3>
     <p>Age: <%= astronaut.age %></p>
     <p>Job: <%= astronaut.job %></p>
+    <div>
+      <p>Missions:</p>
+      <ul>
+        <% astronaut.missions.each do |mission| %>
+          <li><%= mission.title %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 <% end %>
 

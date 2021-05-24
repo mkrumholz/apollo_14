@@ -19,6 +19,7 @@ group :development, :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'shoulda-matchers'
+  gem 'orderly'
   gem 'pry'
   gem 'launchy'
   gem 'simplecov', require: false, group: :test
