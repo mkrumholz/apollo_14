@@ -48,10 +48,3 @@ RSpec.describe 'astronaut index' do
     end
   end
 end
-
-
-
-# As a visitor,
-# When I visit '/astronauts'
-# I see the total time in space for each astronaut.
-# (e.g. "Name: Neil Armstrong, Age: 37, Job: Commander, Total Time in Space: 760 days")
