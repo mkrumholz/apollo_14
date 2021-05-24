@@ -4,8 +4,8 @@ RSpec.describe 'astronaut index' do
   before :each do
     @armstrong = Astronaut.create!(name: 'Neil Armstrong', age: 37, job: 'Commander')
     @aldrin = Astronaut.create!(name: 'Buzz Aldrin', age: 43, job: 'Navigator')
-    @apollo = @armstrong.missions.create!(title: 'Apollo 13', time_in_space: 48)
     @capricorn = @armstrong.missions.create!(title: 'Capricorn 4', time_in_space: 72)
+    @apollo = @armstrong.missions.create!(title: 'Apollo 13', time_in_space: 48)
     @gemini = @armstrong.missions.create!(title: 'Gemini 7', time_in_space: 31)
   end
 
@@ -45,8 +45,5 @@ end
 
 # As a visitor,
 # When I visit '/astronauts'
-# I see a list of the space missions' in alphabetical order for each astronaut.
-#
-# (e.g "Apollo 13"
-#      "Capricorn 4"
-#      "Gemini 7")
+# I see the total time in space for each astronaut.
+# (e.g. "Name: Neil Armstrong, Age: 37, Job: Commander, Total Time in Space: 760 days")
