@@ -22,4 +22,17 @@ describe Astronaut, type: :model do
       end
     end
   end
+
+  describe 'instance methods' do
+    describe 'list_missions' do
+      it 'lists the astronauts missions in alphabetical order' do
+        armstrong = Astronaut.create!(name: 'Neil Armstrong', age: 37, job: 'Commander')
+        capricorn = armstrong.missions.create!(title: 'Capricorn 4', time_in_space: 72)
+        apollo = armstrong.missions.create!(title: 'Apollo 13', time_in_space: 48)
+        gemini = armstrong.missions.create!(title: 'Gemini 7', time_in_space: 31)
+
+        expect(armstrong.list_missions).to eq [apollo, capricorn, gemini]
+      end
+    end
+  end
 end

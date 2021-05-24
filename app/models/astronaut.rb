@@ -6,4 +6,8 @@ class Astronaut < ApplicationRecord
   def self.average_age
     average(:age)
   end
+
+  def list_missions
+    missions.order(Arel.sql('lower(title)'))
+  end
 end
